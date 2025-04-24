@@ -25,14 +25,16 @@ const BookPuja = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:19010/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          subject: `Puja Booking: ${formData.pujaType}`,
-          content: `
+      const response = await fetch(
+        "https://maa-baglamukhi-backend.vercel.app/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            subject: `Puja Booking: ${formData.pujaType}`,
+            content: `
             Name: ${formData.name}
             Mobile: ${formData.mobile}
             Email: ${formData.email}
@@ -40,12 +42,15 @@ const BookPuja = () => {
             Date: ${formData.date}
             Message: ${formData.message}
           `,
-          email: formData.email,
-        }),
-      });
+            email: formData.email,
+          }),
+        }
+      );
 
       if (response.ok) {
-        alert("Your puja booking request has been submitted successfully panditji will contact you soon.");
+        alert(
+          "Your puja booking request has been submitted successfully panditji will contact you soon."
+        );
         setFormData({
           name: "",
           mobile: "",

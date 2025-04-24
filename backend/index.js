@@ -6,9 +6,16 @@ require("dotenv").config();
 const contactUsRoute = require("./contactUs");
 
 const app = express();
-const port = process.env.PORT || 19010;
+const port = process.env.PORT || 3000;
 
-app.use(cors());
+// Set CORS options
+const corsOptions = {
+  origin: "https://maa-baglamukhi-frontend.vercel.app", // Allow request onely from this domain
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP Methodes
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed Header
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
 

@@ -26,7 +26,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:19010/contact", {
+      const response = await fetch("https://maa-baglamukhi-backend.vercel.app/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
