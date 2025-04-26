@@ -25,7 +25,6 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="divine-aura-bg"></div>{" "}
-      {/* Optional floating aura effect */}
       <div className="footer-links">
         {navLinks.map((link, i) => (
           <motion.div

@@ -10,9 +10,18 @@ const LangSwitch = () => {
   };
 
   return (
-    <button onClick={toggleLanguage} className="lang-switch-btn">
-      {t("header.language")}
-    </button>
+    <label className="lang-toggle">
+      <input
+        type="checkbox"
+        onChange={toggleLanguage}
+        checked={i18n.language === "hi"}
+      />
+      <span className="slider">
+        <span className="lang-label">{t("language.en")}</span>
+        <span className="lang-label">{t("language.hi")}</span>
+      </span>
+      <span className="lang-tooltip">{t("language.tooltip")}</span>
+    </label>
   );
 };
 

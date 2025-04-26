@@ -46,7 +46,7 @@ const PanditServices = () => {
 
           <ul className="puja-services">
             {services.map((item, index) => (
-              <li key={index}>✅ {item}</li>
+              <li key={index}> {item}</li>
             ))}
           </ul>
         </motion.div>

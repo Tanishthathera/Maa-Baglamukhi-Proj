@@ -4,8 +4,16 @@
   "bookPuja": "Book Puja",
   "gallery": "Gallery",
   "contact": "Contact",
-  "astrology": "Astrology","language": "हिन्दी"
+  "astrology": "Astrology",
+  "language": "हिन्दी"
   },
+
+  "language": {
+    "en": "EN",
+    "hi": "HI",
+    "tooltip": "LANGUAGE"
+  },
+
   "hero": {
   "title": "Jai Maa Baglamukhi",
   "subtitle": "The powerful Shaktipeeth in Nalkheda, MP — where miracles happen",
@@ -36,7 +44,10 @@
     "title": "Divine Interventions",
     "text": "People have experienced divine signs and fulfilled wishes after sincere prayers."
   },
-  "finalNote": "The temple holds special importance during <strong>Navratri</strong>, when powerful rituals like <em>Baglamukhi Anushthan</em> are performed for spiritual upliftment, peace, and prosperity."
+  
+  "finalNote": "The temple holds special importance during  Navratri , when powerful rituals like  Baglamukhi Anushthan  are performed for spiritual upliftment, peace, and prosperity."
+
+
 },
 
 "common": {
@@ -50,7 +61,7 @@
     "content": "The Maa Baglamukhi Temple, located in Nalkheda town of Agar Malwa district in Madhya Pradesh, India, is a revered Hindu pilgrimage site dedicated to Goddess Baglamukhi. Situated on the serene banks of the Lakhundar River, a tributary of the Narmada River, the temple is believed to have been established during the Dwapar Yuga. According to legend, Yudhishthira, the eldest of the Pandavas, installed the idol of Baglamukhi Mata Ji on the 12th day of the Kurukshetra battle, following the advice of Lord Krishna, to attain victory in the Mahabharata war. The temple is dedicated to Goddess Baglamukhi, one of the ten Mahavidyas in Hinduism, known for her power to paralyze enemies and protect devotees from evil forces. The idol of the goddess is considered self-manifested and is believed to possess miraculous powers. Alongside Baglamukhi, the temple also houses idols of Goddess Lakshmi and Goddess Saraswati, representing the Trishakti (three powers). The temple is a significant center for Tantric rituals and spiritual practices. Devotees, including Shaiva and Shakta sects, as well as spiritual seekers from across India, visit the temple to perform rituals aimed at overcoming adversaries, achieving victory in legal matters, and gaining control over speech. The color yellow holds special significance in the worship of Baglamukhi, with devotees offering yellow clothes, turmeric, and other yellow items during rituals. Architecturally, the temple complex features a 16-pillared assembly hall (sabhamandap), an 80-foot-tall lamp tower (deepmalika), and shrines dedicated to south-facing Hanuman, north-facing Gopal, and east-facing Bhairav. The presence of sacred trees like bael, champa, amla, neem, and peepal further enhances the spiritual ambiance of the temple. During the Navratri festival, the temple becomes a hub of spiritual activity, hosting special rituals and fire ceremonies (havan) that attract devotees from all over the country. In recent times, the sanctum sanctorum and assembly hall have been adorned with 500 kilograms of silver, adding to the temple's grandeur. The Maa Baglamukhi Temple in Nalkheda stands not only as a center of spiritual practice but also as a symbol of unwavering faith and devotion for countless worshippers.",
     
     "historyAndMiracles": {
-    "heading": "📜 History and Miracles",
+    "heading": " History and Miracles",
     "ancientHistory": {
       "heading": "Ancient History",
       "establishment": "According to the temple priest, during the Mahabharata era, the Pandavas performed penance here under Lord Krishna's guidance to attain victory in the war. Previously, this place was known as 'Mataji Ko Dehra'.",
@@ -62,18 +73,18 @@
       "sacredTrees": "Within the temple premises, sacred trees like Bael, Champa, white Aak, Amla, Neem, and Peepal are situated together."
     },
     "tantricPractices": {
-      "heading": "🔱 Center for Tantric Practices",
+      "heading": " Center for Tantric Practices",
       "importance": "This temple is a special center for tantric practices. Surrounded by cremation grounds and located near a river, it is considered suitable for such rituals.",
       "locationDetails": "To the west lies the village of Gudrawan, to the east a cemetery, and to the south an open cremation ground. The idol here is believed to be self-manifested and awakened."
     },
     "goddessForm": {
-      "heading": "🌺 Form of Maa Baglamukhi",
+      "heading": " Form of Maa Baglamukhi",
       "features": "The form of Maa Baglamukhi reflects the divine aspect of Lord Ardhanarishvara Mahashambhu. She possesses a third eye on her forehead, a gem-studded crown, and the moon adorns her head.",
       "scripturalReferences": "She is considered the primary power of Maharudra. Worshipped in forms like Stambhini, Mohini, Sanharini, Pitambara, Raudrani, Nageshwari, Siddharupini, among others.",
       "vidyaDetails": "Goddess Bagla is associated with the Ashtami Vidya, worshipped after Kali, Tara, and Shodashi. She holds the first position in the Siddha-Vidya-Traya."
     },
     "notableVisitors": {
-      "heading": "🙏 Notable Visitors",
+      "heading": " Notable Visitors",
       "personalities": [
         "Union Minister Smriti Irani",
         "Uma Bharti",
@@ -182,7 +193,7 @@
     "subtitle": "Trusted across India and globally for sacred rituals",
     "cards": [
       {
-        "title": "Shirdi Sai Mandir, Maharashtra",
+        "title": "Mumbai Maharashtra",
         "desc": "Conducted Navgraha Shanti Puja and Baglamukhi Anushthan in 2022."
       },
       {
@@ -190,7 +201,7 @@
         "desc": "Live-streamed Hawans for international devotees via Zoom & YouTube."
       },
       {
-        "title": "Kalkaji Mandir, New Delhi",
+        "title": " New Delhi",
         "desc": "Performed Shatru Vinash Puja during Navratri Mahotsav."
       },
       {
@@ -251,7 +262,7 @@
     "addressLabel": "Address",
     "address": "Maa Baglamukhi Mandir, Nalkheda, Agar Malwa, Madhya Pradesh, India",
     "phoneLabel": "Phone",
-    "phone": "+91 9876543210",
+    "phone": "+91 9179999090",
     "emailLabel": "Email",
     "email": "panditji@maabaglamukhi.org"
   },

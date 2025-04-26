@@ -48,7 +48,7 @@ const Gallery = () => {
   return (
     <section className="gallery-page">
       <div className="gallery-hero">
-        <h2 className="section-title">📸 {t("gallery.heading")}</h2>
+        <h2 className="section-title"> {t("gallery.heading")}</h2>
       </div>
 
       <div className="tabs">

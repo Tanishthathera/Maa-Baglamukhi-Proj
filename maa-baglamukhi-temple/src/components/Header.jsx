@@ -40,10 +40,9 @@ const Header = () => {
           <Link to="/astrology" onClick={closeMenu}>
             {t("header.astrology")}
           </Link>
-
-          {/* Language Switcher */}
-          <LangSwitch />
         </nav>
+
+        <LangSwitch />
       </header>
     </>
   );

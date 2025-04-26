@@ -145,7 +145,7 @@ const BookPuja = () => {
           value={formData.message}
           onChange={handleChange}
         ></textarea>
-        <button type="submit">📿 {t("bookPuja.bookNow")}</button>
+        <button type="submit"> {t("bookPuja.bookNow")}</button>
       </motion.form>
     </section>
   );

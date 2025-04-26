@@ -44,7 +44,7 @@ const Mantras = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
-        <h3>🙏 {t("mantras.benefitsTitle")}</h3>
+        <h3> {t("mantras.benefitsTitle")}</h3>
         <ul>
           <li>{t("mantras.benefits.0")}</li>
           <li>{t("mantras.benefits.1")}</li>

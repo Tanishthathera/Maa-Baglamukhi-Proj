@@ -26,22 +26,25 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://maa-baglamukhi-backend.vercel.app/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          subject: `Contact Form Submission from ${formData.name}`,
-          content: `
+      const response = await fetch(
+        "https://maa-baglamukhi-backend.vercel.app/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            subject: `Contact Form Submission from ${formData.name}`,
+            content: `
             Name: ${formData.name}
             Mobile: ${formData.mobile}
             Email: ${formData.email}
             Message: ${formData.message}
           `,
-          email: formData.email,
-        }),
-      });
+            email: formData.email,
+          }),
+        }
+      );
 
       if (response.ok) {
         alert(
@@ -71,7 +74,7 @@ const Contact = () => {
         className="yantra-bg"
       />
 
-      <h2 className="section-title glow-text">📿 {t("contact.title")}</h2>
+      <h2 className="section-title glow-text"> {t("contact.title")}</h2>
       <p className="contact-subtext">{t("contact.subtitle")}</p>
 
       <form className="contact-form glass-card" onSubmit={handleSubmit}>
@@ -106,14 +109,14 @@ const Contact = () => {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">🔱 {t("contact.button")}</button>
+        <button type="submit"> {t("contact.button")}</button>
       </form>
 
       <div className="contact-info">
         <p>
           <strong>📞 {t("contact.direct")}:</strong>
         </p>
-        <p>+91-9876543210</p>
+        <p>+91-9179999090</p>
         <p>📧 panditji@example.com</p>
       </div>
     </section>

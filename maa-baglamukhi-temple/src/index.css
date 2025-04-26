@@ -11,16 +11,9 @@ html, body {
 
  /* Header style */
 
- /* .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-   padding: 0 1rem;
-   align-items: center;   
-  justify-content: space-between;
- } */
-
  .header {
-  /*background:  transparent; transparent */
+  justify-content: space-between;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -109,7 +102,7 @@ html, body {
   color: #ffd700;
   font-weight: bold;
   text-shadow: 0 0 12px #f9e79f, 0 0 25px #ffe066;
-  font-family: 'Merienda', cursive; /* or any script-style font */
+  font-family: 'Merienda', cursive; 
 }
 
 .nav {
@@ -151,7 +144,7 @@ html, body {
   text-shadow: 0 0 10px #ffe066;
 }
 
-/* Optional glowing flicker (subtle spiritual effect) */
+/* glowing flicker */
 .header::before {
   content: '';
   position: absolute;
@@ -246,8 +239,8 @@ html, body {
     height: 100vh;
     width: 100vw;
     backdrop-filter: blur(8px);
-    background-color: rgb(0, 0, 0);
-    z-index: 1099; /* Nav ka 1100 hai, so this is fine */
+    background-color: rgb(14, 13, 13);
+    z-index: 1099; 
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
     max-width: 100vw;
@@ -257,31 +250,108 @@ html, body {
 }
 
     
-/* Language Switch Button Style */
-.lang-switch-btn {
-  background-color: #f1c40f; /* Pitambari Yellow */
-  color: #000;
-  border: none;
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Language Switch  */
+
+.lang-toggle {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 34px;
   margin-left: auto;
 }
 
-.lang-switch-btn:hover {
-  background-color: #d4ac0d;
+.lang-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-/* Optional: On small screens */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #f1c40f;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: transform 0.4s;
+  border-radius: 50%;
+}
+
+.lang-toggle input:checked + .slider::before {
+  transform: translateX(46px);
+}
+
+.lang-tooltip {
+  position: absolute;
+  top: 9px;
+  right: 83px;
+  backdrop-filter: blur(8px);
+  background-color: #313030;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lang-toggle:hover .lang-tooltip {
+  opacity: 1;
+}
+
+.lang-label {
+  z-index: 1;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
-  .lang-switch-btn {
-    font-size: 0.85rem;
-    padding: 6px 12px;
+  .lang-toggle {
+    width: 60px;
+    height: 28px;
+  }
+
+  .slider::before {
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+  }
+
+  .lang-toggle input:checked + .slider::before {
+    transform: translateX(32px);
+  }
+
+  .lang-label {
+    font-size: 0.75rem;
+  }
+
+  .lang-tooltip {
+    top: 8px;
+    right: 63px;
+    font-size: 0.65rem;
   }
 }
+
 
 
   
@@ -603,7 +673,7 @@ html, body {
   z-index: 1;
 }
 
-/* ✨ Divine Glow Animation */
+/* Glow Animation */
 .about-maa-full::before {
   content: '';
   position: absolute;
@@ -627,7 +697,7 @@ html, body {
   }
 }
 
-/* 🕉️ Headings Styling */
+/*  Headings Styling */
 .about-maa-full h1 {
   font-size: 2.5rem;
   text-align: center;
@@ -647,7 +717,7 @@ html, body {
   animation: fadeInDown 1s ease-out;
 }
 
-/* 📜 Paragraph Styling */
+/*  Paragraph Styling */
 .about-maa-full p {
   font-size: 1.125rem;
   line-height: 1.8;
@@ -659,7 +729,7 @@ html, body {
   animation: fadeInUp 1.5s ease-out;
 }
 
-/* 📋 List Styling */
+/*  List Styling */
 .about-maa-full ul {
   list-style-type: disc;
   padding-left: 2rem;
@@ -673,7 +743,7 @@ html, body {
   margin-bottom: 0.5rem;
 }
 
-/* 🌟 Animations */
+/* Animations */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -696,7 +766,7 @@ html, body {
   }
 }
 
-/* 📱 Responsive Design */
+/*  Responsive */
 @media (max-width: 768px) {
   .about-maa-full {
     padding: 3rem 1.5rem;
@@ -1552,7 +1622,7 @@ html, body {
   color: #333;
 }
 
-/* Responsive Layout */
+/* Responsive */
 
 @media (min-width: 768px) {
   .contact-details {
@@ -1844,7 +1914,7 @@ html, body {
 
 
 
-/* Astrology Enhanced */
+/* Astrology */
 
 .astrology-page {
   position: relative;
@@ -1957,7 +2027,7 @@ html, body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Media Grid like Instagram */
+/* Media Grid  */
 .media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -1982,14 +2052,14 @@ html, body {
   box-shadow: 0 0 15px rgba(255, 223, 0, 0.3);
 }
 
-/* Optional: Add hover play icon like Reels */
+/* hover play icon like Reels */
 .media-grid video::before {
   content: '';
   position: absolute;
   display: block;
 }
 
-/* 🖼️ Lightbox Styles */
+/*  Lightbox Styles */
 .lightbox {
   position: fixed;
   top: 0;
@@ -2019,9 +2089,9 @@ html, body {
   cursor: pointer;
 }
 
-/* 🎨 Background image block with overlaid heading */
+/*  Background image block with overlaid heading */
 .gallery-hero {
-  background-image: url("/public/assets/gallery/gallery.jpg"); /* replace with your image path */
+  background-image: url("/public/assets/gallery/gallery.jpg"); 
   background-size: cover;
   background-position: center;
   height: 250px;
@@ -2040,7 +2110,7 @@ html, body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* dark overlay for text readability */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
   border-radius: 12px;
 }
@@ -2054,7 +2124,7 @@ html, body {
   margin: 0;
 }
 
-/* Optional: Adjust spacing for mobile */
+/* Responsive */
 @media (max-width: 768px) {
   .gallery-hero {
     height: 180px;
