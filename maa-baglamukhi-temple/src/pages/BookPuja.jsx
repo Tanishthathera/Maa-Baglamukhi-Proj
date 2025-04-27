@@ -49,7 +49,7 @@ const BookPuja = () => {
 
       if (response.ok) {
         alert(
-          "Your puja booking request has been submitted successfully panditji will contact you soon."
+          "Your puja booking request has been submitted successfully our team will contact you soon."
         );
         setFormData({
           name: "",

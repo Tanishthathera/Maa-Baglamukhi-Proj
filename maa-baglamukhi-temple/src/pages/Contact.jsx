@@ -48,7 +48,7 @@ const Contact = () => {
 
       if (response.ok) {
         alert(
-          "Your message has been sent successfully panditji will contact you soon."
+          "Your message has been sent successfully our team will contact you soon."
         );
         // Reset form fields
         setFormData({
