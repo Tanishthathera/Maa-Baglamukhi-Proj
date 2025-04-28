@@ -1,7 +1,7 @@
 const backgroundImageUrl =
   "https://maa-baglamukhi-frontend.vercel.app/assets/images/mandir.jpg";
 const logoImageUrl =
-  "https://maa-baglamukhi-frontend.vercel.app/assets/maabaglamukhi-icon.png";
+  "https://maa-baglamukhi-frontend.vercel.app/assets/maabaglamukhi-icon.png/32/32";
 
 const express = require("express");
 const router = express.Router();
