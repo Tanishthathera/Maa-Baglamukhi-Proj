@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
             background: #f4f7ff;
             background-image: url(${backgroundImageUrl});
             background-repeat: no-repeat;
-            background-size: 700px 700px;
+            background-size: 500px 600px;
             background-position: top center;
             font-size: 14px;
             color: #434343;
@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
       >
         <header>
           <div>
-            <img src="${logoImageUrl}" alt="Logo" width="50px">
+            <img src="${logoImageUrl}" alt="Logo" width="70px">
           </div>
         </header>
 
