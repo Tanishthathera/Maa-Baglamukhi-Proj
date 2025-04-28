@@ -1,3 +1,6 @@
+const backgroundImageUrl = "https://yourdomain.com/your-background.jpg";
+const logoImageUrl = "/assets/maabaglamukhi-icon.png";
+
 const express = require("express");
 const router = express.Router();
 const sendEmailFromUser = require("./emailFromUser");
@@ -18,7 +21,7 @@ router.post("/", async (req, res) => {
             margin: 0 auto;
             padding: 45px 30px 60px;
             background: #f4f7ff;
-            background-image: url(https://picsum.photos/800/400);
+            background-image: url(${backgroundImageUrl});
             background-repeat: no-repeat;
             background-size: 800px 452px;
             background-position: top center;
@@ -28,7 +31,7 @@ router.post("/", async (req, res) => {
       >
         <header>
           <div>
-            <img src="https://www.redspy365.com/wp-content/uploads/2020/04/redspy365_logo-1.png" alt="" width="200px" >
+            <img src="${logoImageUrl}" alt="Logo" width="200px">
           </div>
         </header>
 

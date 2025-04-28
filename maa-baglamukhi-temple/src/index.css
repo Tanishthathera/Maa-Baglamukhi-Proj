@@ -663,6 +663,7 @@ html, body {
 
 
 /* AboutMaaFull */
+
 .about-maa-full {
   background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
   padding: 4rem 2rem;
@@ -708,13 +709,22 @@ html, body {
   animation: fadeInDown 1s ease-out;
 }
 
-.about-maa-full h2,
+.about-maa-full h2{
+  color: #ffe600;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 1s ease-out;
+  text-align: center;
+  font-size: 2rem;
+}
 .about-maa-full h3 {
   color: #ffe600;
   margin-top: 2rem;
   position: relative;
   z-index: 1;
   animation: fadeInDown 1s ease-out;
+  font-size: 1.5rem;
 }
 
 /*  Paragraph Styling */
