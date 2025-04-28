@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 // Set CORS options
 const corsOptions = {
-  origin: "https://maa-baglamukhi-frontend.vercel.app", // Allow request onely from this domain
+  origin: "https://maabaglamukhi.vercel.app", // Allow request onely from this domain
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP Methodes
   allowedHeaders: ["Content-Type", "Authorization"], // Allowed Header
   credentials: true,
