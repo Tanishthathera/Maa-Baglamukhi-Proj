@@ -1,4 +1,4 @@
-const backgroundImageUrl = "https://yourdomain.com/your-background.jpg";
+const backgroundImageUrl = "/assets/images/mandir.jpg";
 const logoImageUrl = "/assets/maabaglamukhi-icon.png";
 
 const express = require("express");
