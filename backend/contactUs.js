@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
       >
         <header>
           <div>
-            <img src="${logoImageUrl}" alt="Logo" width="70px">
+            <img src="${logoImageUrl}" alt="Logo" width="60px">
           </div>
         </header>
 
