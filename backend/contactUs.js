@@ -1,7 +1,7 @@
 const backgroundImageUrl =
   "https://maabaglamukhi.vercel.app/assets/images/emailtemp.jpg";
 const logoImageUrl =
-  "https://maabaglamukhi.vercel.app/assets/images/maabaglamukhi-icon.png";
+  "https://maabaglamukhi.vercel.app/assets/images/maabaglamukhi-icon2.png";
 
 const express = require("express");
 const router = express.Router();
@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
       >
         <header>
           <div>
-            <img src="${logoImageUrl}" alt="Logo" width="60px">
+            <img src="${logoImageUrl}" alt="Logo" width="40px">
           </div>
         </header>
 
