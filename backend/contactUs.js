@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
             background: #f4f7ff;
             background-image: url(${backgroundImageUrl});
             background-repeat: no-repeat;
-            background-size: 800px 455px;
+            background-size: 900px 455px;
             background-position: top center;
             font-size: 14px;
             color: #434343;
