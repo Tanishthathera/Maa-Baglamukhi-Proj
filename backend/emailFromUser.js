@@ -10,8 +10,8 @@ const sendEmailFromUser = async (sender, receiver, subject, htmlContent) => {
       Messages: [
         {
           From: {
-            Email: receiver.email,
-            Name: receiver.name,
+            Email: sender.emailId,
+            Name: sender.name || "Sender",
           },
           To: [
             {
