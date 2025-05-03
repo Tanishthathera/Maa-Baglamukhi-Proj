@@ -5,7 +5,7 @@ const logoImageUrl =
 
 const express = require("express");
 const router = express.Router();
-const sendEmailFromUser = require("./api/emailFromUser");
+const sendEmailFromUser = require("./emailFromUser");
 
 router.post("/", async (req, res) => {
   try {
