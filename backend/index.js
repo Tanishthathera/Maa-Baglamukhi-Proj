@@ -16,7 +16,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.options("*", cors(corsOptions));
+app.options('/contact', cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
