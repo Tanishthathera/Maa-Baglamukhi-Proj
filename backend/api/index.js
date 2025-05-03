@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
-const contactUsRoute = require("../contactUss");
+const contactUsRoute = require("../contactUs");
 
 const app = express();
 const port = process.env.PORT || 3000;
