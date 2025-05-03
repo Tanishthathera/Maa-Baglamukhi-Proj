@@ -23,7 +23,6 @@ const sendEmailFromUser = async (sender, receiver, subject, htmlContent) => {
             Email: sender.emailId,
           },
           Subject: subject,
-          TextPart: content,
           HTMLPart: htmlContent,
         },
       ],

@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
-const contactUsRoute = require("./contactUs");
+const contactUsRoute = require("./api/contactUs");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,7 +16,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.options('/contact', cors(corsOptions));
+app.options("/contact", cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
