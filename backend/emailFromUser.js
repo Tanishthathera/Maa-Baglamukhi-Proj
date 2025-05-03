@@ -23,7 +23,7 @@ const sendEmailFromUser = async (sender, receiver, subject, htmlContent) => {
             Email: sender.emailId,
           },
           Subject: subject,
-          TextPart: "This is the plain text version of the email.",
+          TextPart: content,
           HTMLPart: htmlContent,
         },
       ],
