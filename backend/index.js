@@ -26,14 +26,6 @@ app.use((req, res, next) => {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-// Add explicit OPTIONS handler for /contact to handle preflight requests
-app.options("/contact", (req, res) => {
-  res.header("Access-Control-Allow-Origin", corsOptions.origin);
-  res.header("Access-Control-Allow-Methods", corsOptions.methods.join(","));
-  res.header("Access-Control-Allow-Headers", corsOptions.allowedHeaders);
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.sendStatus(204);
-});
 
 app.use("/contact", contactUsRoute);
 
