@@ -144,7 +144,7 @@ router.post("/", async (req, res) => {
     const sender = { emailId: email };
     const receiver = { email: "tanishthathera@gmail.com", name: "Tanish" };
 
-    await sendEmailFromUser(sender, receiver, subject, EmailContent);
+    await sendEmailFromUser(sender, receiver, subject, EmailContent, content);
 
     res
       .status(200)

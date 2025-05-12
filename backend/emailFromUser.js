@@ -4,7 +4,7 @@ const mailjet = Mailjet.apiConnect(
   process.env.MJ_SECRET_KEY
 );
 
-const sendEmailFromUser = async (sender, receiver, subject, htmlContent) => {
+const sendEmailFromUser = async (sender, receiver, subject, htmlContent, textContent) => {
   try {
     await mailjet.post("send", { version: "v3.1" }).request({
       Messages: [
@@ -23,7 +23,8 @@ const sendEmailFromUser = async (sender, receiver, subject, htmlContent) => {
             Email: sender.emailId,
           },
           Subject: subject,
-          HTMLPart: htmlContent,
+          TextPart: textContent, // Add plain text version
+          HTMLPart: htmlContent, // Add HTML part too
         },
       ],
     });
