@@ -12,6 +12,7 @@ import Milestones from "../components/Milestones";
 import HowItWorks from "../components/HowItWorks";
 import PanditReference from "../components/PanditReference";
 import Testimonials from "../components/Testimonials";
+import Questions from "../components/Questions";
 import ContactInfo from "../components/ContactInfo";
 
 const Home = () => {
@@ -35,7 +36,7 @@ const Home = () => {
       <HowItWorks />
       <PanditReference />
       <Testimonials />
-
+      <Questions />
       <ContactInfo />
     </>
   );
