@@ -9,7 +9,10 @@ const Questions = () => {
     name: "",
     phone: "",
     question: "",
+    honeypot: "", // Hidden field to trap bots
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,11 +22,45 @@ const Questions = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Callback Request:", formData);
-    alert(t("questions.alert"));
-    setFormData({ name: "", phone: "", question: "" });
+
+    // Bot detection
+    if (formData.honeypot !== "") {
+      return; // silently reject spam bot
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("https://maa-baglamukhi-backend.vercel.app/questions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          subject: `Callback Request from ${formData.name}`,
+          content: `
+            Name: ${formData.name}
+            Phone: ${formData.phone}
+            Question: ${formData.question}
+          `,
+          email: "tanishthathera@gmail.com",
+        }),
+      });
+
+      if (response.ok) {
+        alert(t("questions.alert"));
+        setFormData({ name: "", phone: "", question: "", honeypot: "" });
+      } else {
+        alert("Error sending callback request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Error sending callback request. Please try again.");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -53,6 +90,17 @@ const Questions = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
+        {/* Honeypot field - hidden from users */}
+        <input
+          type="text"
+          name="honeypot"
+          value={formData.honeypot}
+          onChange={handleChange}
+          style={{ display: "none" }}
+          tabIndex="-1"
+          autoComplete="off"
+        />
+
         <input
           type="text"
           name="name"
@@ -60,7 +108,9 @@ const Questions = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          aria-label="Name"
         />
+
         <input
           type="tel"
           name="phone"
@@ -68,15 +118,23 @@ const Questions = () => {
           value={formData.phone}
           onChange={handleChange}
           required
+          pattern="[0-9]{10}"
+          title="Please enter a valid 10-digit phone number"
+          aria-label="Phone number"
         />
+
         <textarea
           name="question"
           placeholder={t("questions.questionPlaceholder")}
           value={formData.question}
           onChange={handleChange}
           required
+          aria-label="Your Question"
         ></textarea>
-        <button type="submit">{t("questions.button")}</button>
+
+        <button type="submit" disabled={loading} aria-label="Submit Callback Request">
+          {loading ? t("questions.sending") : t("questions.button")}
+        </button>
       </motion.form>
     </section>
   );
