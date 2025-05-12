@@ -101,6 +101,9 @@ const Contact = () => {
           value={formData.mobile}
           onChange={handleChange}
           required
+          pattern="[0-9]{10}"
+          title="Please enter a valid 10-digit phone number"
+          aria-label="Phone number"
         />
         <textarea
           name="message"
