@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import Astrology from "./pages/Astrology";
 import Gallery from "./pages/Gallery";
 import AboutMaaFull from "./components/AboutMaaFull";
-import Questions from "../components/Questions";
+import Questions from "./components/Questions";
 
 const App = () => {
   return (
