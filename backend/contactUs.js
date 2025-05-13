@@ -1,34 +1,59 @@
+const express = require("express");
+const router = express.Router();
+const sendEmailFromUser = require("./emailFromUser");
+
 const backgroundImageUrl =
   "https://maabaglamukhi.vercel.app/assets/images/emailtemp.jpg";
 const logoImageUrl =
   "https://maabaglamukhi.vercel.app/assets/images/maabaglamukhi-icon2.png";
 
-const express = require("express");
-const router = express.Router();
-const sendEmailFromUser = require("./emailFromUser");
-
 router.post("/", async (req, res) => {
   try {
-    const { subject, content, email } = req.body;
-    if (!subject || !content || !email) {
-      return res
-        .status(400)
-        .json({ error: "Email, Subject, and Content are required." });
+    const { subject, content, email, name, mobile, message } = req.body;
+
+    // Smart detection of form type: Contact/BookPuja vs Questions
+    let finalSubject = subject || "New User Query from Questions Section";
+    let finalContent = "";
+    let senderEmail = email || "noreply@maabaglamukhi.in";
+
+    if (email && subject && content) {
+      // 📩 Contact or BookPuja form submission
+      finalContent = `
+        <div>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${content}</p>
+        </div>
+      `;
+    } else if (name && mobile && message) {
+      // ❓ Questions form submission
+      finalContent = `
+        <div>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Mobile:</strong> ${mobile}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message}</p>
+        </div>
+      `;
+    } else {
+      return res.status(400).json({
+        error: "Missing required fields. Please include either {email, subject, content} or {name, mobile, message}.",
+      });
     }
 
-    const EmailContent = `
+    const EmailHTML = `
       <div
         style="
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 45px 30px 60px;
-            background: #f4f7ff;
-            background-image: url(${backgroundImageUrl});
-            background-repeat: no-repeat;
-            background-size: 900px 455px;
-            background-position: top center;
-            font-size: 14px;
-            color: #434343;
+          max-width: 680px;
+          margin: 0 auto;
+          padding: 45px 30px 60px;
+          background: #f4f7ff;
+          background-image: url(${backgroundImageUrl});
+          background-repeat: no-repeat;
+          background-size: 900px 455px;
+          background-position: top center;
+          font-size: 14px;
+          color: #434343;
         "
       >
         <header>
@@ -57,6 +82,7 @@ router.post("/", async (req, res) => {
                   color: #1f1f1f;
                 "
               >
+                New Form Submission
               </h1>
               <p
                 style="
@@ -80,7 +106,7 @@ router.post("/", async (req, res) => {
                   word-break: break-word;
                 "
               >
-                ${content}
+                ${finalContent}
               </div>
             </div>
           </div>
@@ -97,10 +123,10 @@ router.post("/", async (req, res) => {
           >
             Need help? Ask at
             <a
-              href="mailto:tanishthathera@gamil.com"
+              href="mailto:tanishthathera@gmail.com"
               style="color: #499fb6; text-decoration: none;"
             >
-              tanishthathera@gamil.com
+              tanishthathera@gmail.com
             </a>
             or visit our
             <a
@@ -133,7 +159,6 @@ router.post("/", async (req, res) => {
           >
             Maa Baglamukhi
           </p>
-
           <p style="margin: 0; margin-top: 16px; color: #434343;">
             Copyright © 2025 Maa Baglamukhi Mandir, Nalkheda. All rights reserved.
           </p>
@@ -141,19 +166,15 @@ router.post("/", async (req, res) => {
       </div>
     `;
 
-    const sender = { emailId: email };
+    const sender = { emailId: senderEmail };
     const receiver = { email: "tanishthathera@gmail.com", name: "Tanish" };
 
-    await sendEmailFromUser(sender, receiver, subject, EmailContent, content);
+    await sendEmailFromUser(sender, receiver, finalSubject, EmailHTML, finalContent);
 
-    res
-      .status(200)
-      .json({ message: "Your message has been sent successfully." });
+    res.status(200).json({ message: "Your message has been sent successfully." });
   } catch (error) {
-    console.error("Error in contactUs route:", error);
-    res
-      .status(500)
-      .json({ error: "An error occurred while sending your message." });
+    console.error("Error in email route:", error);
+    res.status(500).json({ error: "An error occurred while sending your message." });
   }
 });
 
