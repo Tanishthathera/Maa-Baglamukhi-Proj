@@ -97,10 +97,10 @@ router.post("/", ... async (req, res) => {
           >
             Need help? Ask at
             <a
-              href="mailto:tanishthathera@gamil.com"
+              href="mailto:tanishthathera@gmail.com"
               style="color: #499fb6; text-decoration: none;"
             >
-              tanishthathera@gamil.com
+              tanishthathera@gmail.com
             </a>
             or visit our
             <a

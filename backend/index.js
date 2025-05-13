@@ -19,4 +19,4 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
 
-module.exports = app; 
+module.exports = (req, res) => app(req, res);
