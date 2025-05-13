@@ -39,10 +39,14 @@ const Questions = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: formData.name,
-          mobile: formData.mobile,
-          message: formData.message,
-        }),
+    email: "callback@noemail.com", // dummy/fixed email to satisfy backend
+    subject: `Callback Request from ${formData.name}`,
+    content: `
+      Name: ${formData.name}
+      Mobile: ${formData.mobile}
+      Message: ${formData.message}
+    `
+  }),
       });
 
       if (response.ok) {
