@@ -44,8 +44,7 @@ const Questions = () => {
             Name: ${formData.name}
             Mobile: ${formData.mobile}
             Message: ${formData.message}
-          `,
-          email: formData.email,
+          `
         }),
       });
 
