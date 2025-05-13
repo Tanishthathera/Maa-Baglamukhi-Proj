@@ -6,7 +6,6 @@ require("dotenv").config();
 const contactUsRoute = require("./contactUs");
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Set CORS options
 const corsOptions = {
@@ -20,6 +19,4 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+module.exports = app; 
