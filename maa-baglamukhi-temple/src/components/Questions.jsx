@@ -8,7 +8,7 @@ const Questions = () => {
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
-    question: "",
+    message: "",
     honeypot: "", // Hidden field to trap bots
   });
 
@@ -43,7 +43,7 @@ const Questions = () => {
           content: `
             Name: ${formData.name}
             Mobile: ${formData.mobile}
-            Question: ${formData.question}
+            Message: ${formData.message}
           `,
           email: formData.email,
         }),
@@ -51,7 +51,7 @@ const Questions = () => {
 
       if (response.ok) {
         alert(t("questions.alert"));
-        setFormData({ name: "", mobile: "", question: "", honeypot: "" });
+        setFormData({ name: "", mobile: "", message: "", honeypot: "" });
       } else {
         alert("Error sending callback request. Please try again.");
       }
@@ -126,7 +126,7 @@ const Questions = () => {
         <textarea
           name="question"
           placeholder={t("questions.questionPlaceholder")}
-          value={formData.question}
+          value={formData.message}
           onChange={handleChange}
           required
           aria-label="Your Question"
