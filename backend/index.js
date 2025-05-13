@@ -7,8 +7,6 @@ const contactUsRoute = require("./contactUs");
 
 const app = express();
 
-app.use(express.static("public"));
-
 // Set CORS options
 const corsOptions = {
   origin: "https://maabaglamukhi.vercel.app", // Allow request onely from this domain
