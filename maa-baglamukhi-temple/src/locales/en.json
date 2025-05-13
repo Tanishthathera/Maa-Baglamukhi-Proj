@@ -230,8 +230,9 @@
     "namePlaceholder": "Your Name",
     "phonePlaceholder": "Phone Number",
     "questionPlaceholder": "Your Question (optional)",
-    "button": "Request Callback",
-    "alert": "Thank you! Our team will reach you soon."
+    "button": "Send Message",
+    "alert": "Thank you! Our team will reach you soon.",
+    "sending": "Sending Message"
   },
 
   "testimonials": {
