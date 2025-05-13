@@ -33,7 +33,7 @@ const Questions = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://maa-baglamukhi-backend.vercel.app/questions", {
+      const response = await fetch("https://maa-baglamukhi-backend.vercel.app/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
