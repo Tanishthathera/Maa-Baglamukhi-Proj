@@ -124,7 +124,7 @@ const Questions = () => {
         />
 
         <textarea
-          name="question"
+          name="message"
           placeholder={t("questions.questionPlaceholder")}
           value={formData.message}
           onChange={handleChange}
