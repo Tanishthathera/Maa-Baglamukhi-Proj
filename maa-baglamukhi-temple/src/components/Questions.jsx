@@ -7,7 +7,7 @@ const Questions = () => {
 
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    mobile: "",
     question: "",
     honeypot: "", // Hidden field to trap bots
   });
@@ -42,7 +42,7 @@ const Questions = () => {
           subject: `Callback Request from ${formData.name}`,
           content: `
             Name: ${formData.name}
-            Phone: ${formData.phone}
+            Mobile: ${formData.mobile}
             Question: ${formData.question}
           `,
           email: formData.email,
@@ -51,7 +51,7 @@ const Questions = () => {
 
       if (response.ok) {
         alert(t("questions.alert"));
-        setFormData({ name: "", phone: "", question: "", honeypot: "" });
+        setFormData({ name: "", mobile: "", question: "", honeypot: "" });
       } else {
         alert("Error sending callback request. Please try again.");
       }
@@ -113,9 +113,9 @@ const Questions = () => {
 
         <input
           type="tel"
-          name="phone"
+          name="mobile"
           placeholder={t("questions.phonePlaceholder")}
-          value={formData.phone}
+          value={formData.mobile}
           onChange={handleChange}
           required
           pattern="[0-9]{10}"
