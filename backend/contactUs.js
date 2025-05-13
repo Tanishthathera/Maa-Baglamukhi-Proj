@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
             margin: 0 auto;
             padding: 45px 30px 60px;
             background: #f4f7ff;
-            background-image: url("https://maabaglamukhi.vercel.app/assets/images/emailtemp.jpg");
+            background-image: url"https://maabaglamukhi.vercel.app/assets/images/emailtemp.jpg";
             background-repeat: no-repeat;
             background-size: 900px 455px;
             background-position: top center;
