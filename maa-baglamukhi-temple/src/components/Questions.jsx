@@ -45,7 +45,7 @@ const Questions = () => {
             Phone: ${formData.phone}
             Question: ${formData.question}
           `,
-          email: "tanishthathera@gmail.com",
+          email: formData.email,
         }),
       });
 
