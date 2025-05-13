@@ -39,12 +39,9 @@ const Questions = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          subject: `Callback Request from ${formData.name}`,
-          content: `
-            Name: ${formData.name}
-            Mobile: ${formData.mobile}
-            Message: ${formData.message}
-          `
+          name: formData.name,
+          mobile: formData.mobile,
+          message: formData.message,
         }),
       });
 
@@ -52,6 +49,8 @@ const Questions = () => {
         alert(t("questions.alert"));
         setFormData({ name: "", mobile: "", message: "", honeypot: "" });
       } else {
+        const errorData = await response.json();
+        console.error("Backend error:", errorData);
         alert("Error sending callback request. Please try again.");
       }
     } catch (error) {
