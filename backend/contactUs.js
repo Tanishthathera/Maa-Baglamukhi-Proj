@@ -1,5 +1,7 @@
-const backgroundImageBase64 = "data:image/jpeg;base64,REPLACE_WITH_BASE64_STRING_FOR_BACKGROUND_IMAGE";
-const logoImageBase64 = "data:image/png;base64,REPLACE_WITH_BASE64_STRING_FOR_LOGO_IMAGE";
+const backgroundImageUrl =
+  "https://maabaglamukhi.vercel.app/assets/images/emailtemp.jpg";
+const logoImageUrl =
+  "https://maabaglamukhi.vercel.app/assets/images/maabaglamukhi-icon2.png";
 
 const express = require("express");
 const router = express.Router();
@@ -21,7 +23,7 @@ router.post("/", async (req, res) => {
             margin: 0 auto;
             padding: 45px 30px 60px;
             background: #f4f7ff;
-            background-image: url(${backgroundImageBase64});
+            background-image: url(${backgroundImageUrl});
             background-repeat: no-repeat;
             background-size: 900px 455px;
             background-position: top center;
@@ -31,7 +33,7 @@ router.post("/", async (req, res) => {
       >
         <header>
           <div>
-            <img src="${logoImageBase64}" alt="Logo" width="40px">
+            <img src="${logoImageUrl}" alt="Logo" width="40px">
           </div>
         </header>
 
