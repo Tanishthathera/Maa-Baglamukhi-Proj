@@ -14,32 +14,13 @@ app.get("/", (req, res) => {
 
 // Set CORS options
 const corsOptions = {
-  origin: "*", // Allow all origins temporarily for testing
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP Methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed Headers
-  credentials: false, // Disable credentials for wildcard origin
+  origin: "https://maabaglamukhi.vercel.app", // Allow request onely from this domain
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP Methodes
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed Header
+  credentials: true,
 };
 
-// Apply CORS middleware
 app.use(cors(corsOptions));
-
-// Custom middleware to manually set CORS headers
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization"
-  );
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(204);
-  }
-  next();
-});
-
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
 
