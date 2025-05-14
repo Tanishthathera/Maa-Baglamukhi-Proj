@@ -7,7 +7,7 @@ const express = require("express");
 const router = express.Router();
 const sendEmailFromUser = require("./emailFromUser");
 
-router.post("/", ... async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { subject, content, email } = req.body;
     if (!subject || !content || !email) {
