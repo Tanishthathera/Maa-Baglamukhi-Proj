@@ -23,13 +23,17 @@ router.post("/", async (req, res) => {
             margin: 0 auto;
             padding: 45px 30px 60px;
             background: #f4f7ff;
+            background-image: url(${backgroundImageUrl});
+            background-repeat: no-repeat;
+            background-size: 900px 455px;
+            background-position: top center;
             font-size: 14px;
             color: #434343;
         "
       >
         <header>
           <div>
-            <img src="${logoImageUrl}" alt="Logo" width="40px" style="display:block; margin-bottom:20px;">
+            <img src="${logoImageUrl}" alt="Logo" width="40px">
           </div>
         </header>
 
@@ -37,44 +41,55 @@ router.post("/", async (req, res) => {
           <div
             style="
               margin: 0;
-              margin-top: 20px;
-              padding: 30px;
+              margin-top: 70px;
+              padding: 92px 30px 115px;
               background: #ffffff;
-              border-radius: 10px;
+              border-radius: 30px;
               text-align: center;
-              box-shadow: 0 0 10px rgba(0,0,0,0.1);
             "
           >
-            <p
-              style="
-                margin: 0;
-                font-size: 16px;
-                font-weight: 500;
-                color: #1f1f1f;
-              "
-            >
-              <b>Dear Admin,</b>
-            </p>
-            <div
-              style="
-                margin-top: 20px;
-                background: #f9f9f9;
-                padding: 15px;
-                border-radius: 10px;
-                font-size: 14px;
-                color: #333;
-                text-align: left;
-                word-break: break-word;
-              "
-            >
-              ${content}
+            <div style="width: 100%; max-width: 489px; margin: 0 auto;">
+              <h1
+                style="
+                  margin: 0;
+                  font-size: 24px;
+                  font-weight: 500;
+                  color: #1f1f1f;
+                "
+              >
+              </h1>
+              <p
+                style="
+                  margin: 0;
+                  margin-top: 17px;
+                  font-size: 16px;
+                  font-weight: 500;
+                "
+              >
+                <b>Dear Admin,</b>
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  background: #f9f9f9;
+                  padding: 15px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                  color: #333;
+                  text-align: left;
+                  word-break: break-word;
+                "
+              >
+                ${content}
+              </div>
             </div>
           </div>
 
           <p
             style="
               max-width: 400px;
-              margin: 20px auto 0;
+              margin: 0 auto;
+              margin-top: 90px;
               text-align: center;
               font-weight: 500;
               color: #8c8c8c;
