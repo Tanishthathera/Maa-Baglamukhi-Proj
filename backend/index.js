@@ -14,13 +14,18 @@ app.get("/", (req, res) => {
 
 // Set CORS options
 const corsOptions = {
-  origin: "https://maabaglamukhi.vercel.app", // Allow request onely from this domain
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP Methodes
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed Header
-  credentials: true,
+  origin: "*", // Allow all origins temporarily for testing
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP Methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed Headers
+  credentials: false, // Disable credentials for wildcard origin
 };
 
+// Apply CORS middleware
 app.use(cors(corsOptions));
+
+// Explicitly handle OPTIONS preflight requests
+app.options("*", cors(corsOptions));
+
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
 
