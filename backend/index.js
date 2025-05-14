@@ -5,7 +5,12 @@ require("dotenv").config();
 
 const contactUsRoute = require("./contactUs");
 
+
 const app = express();
+
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Maa Baglamukhi Backend is running." });
+});
 
 // Set CORS options
 const corsOptions = {
