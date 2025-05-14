@@ -1,25 +1,15 @@
 {
   "version": 2,
-  "builds": {
-  "version": 2,
   "builds": [
     {
       "src": "index.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxMemory": 1024
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "index.js",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000"
-      }
+      "dest": "index.js"
     }
   ]
-}
-   
 }
