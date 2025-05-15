@@ -18,7 +18,7 @@ app.use(
 );
 
 app.use(bodyParser.json());
-app.options('/contact', cors(corsOptions));
+app.use(cors(corsOptions));
 
 // Health check route
 app.get("/", (req, res) => {
