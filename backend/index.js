@@ -13,6 +13,7 @@ app.use(
     origin: "https://maabaglamukhi.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type","Authorization"],
+    credentials: true,
   })
 );
 
