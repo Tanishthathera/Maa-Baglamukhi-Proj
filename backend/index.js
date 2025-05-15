@@ -18,7 +18,6 @@ app.use(
 );
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
 
 // Health check route
 app.get("/", (req, res) => {
