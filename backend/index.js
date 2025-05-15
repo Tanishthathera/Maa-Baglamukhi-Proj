@@ -7,23 +7,24 @@ const contactUsRoute = require("./contactUs");
 
 const app = express();
 
-// CORS configuration
-const corsOptions = {
-  origin: "https://maabaglamukhi.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
-};
+// CORS config
+app.use(
+  cors({
+    origin: "https://maabaglamukhi.vercel.app",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
-app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-// Routes
+// Health check route
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Maa Baglamukhi Backend is running." });
+  res.send("Maa Baglamukhi Backend is running.");
 });
 
+// Main route
 app.use("/contact", contactUsRoute);
 
-// Export the app as a serverless function
+// Export for Vercel
 module.exports = app;
