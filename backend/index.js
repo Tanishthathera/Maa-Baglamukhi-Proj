@@ -21,6 +21,10 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+// Explicitly handle OPTIONS preflight requests
+app.options('*', cors(corsOptions));
+
 app.use(bodyParser.json());
 app.use("/contact", contactUsRoute);
 
