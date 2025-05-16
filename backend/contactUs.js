@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
     </div>`;
 
     const sender = { emailId: email };
-    const receiver = { email: "tanishthathera@gmail.com", name: "Tanish" };
+    const receiver = { email: "maabaglamukhinalkehda@gmail.com", name: "MaaBaglamukhi" };
 
     await sendEmailFromUser(sender, receiver, subject, EmailContent, content);
 

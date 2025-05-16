@@ -120,7 +120,7 @@ const Contact = () => {
           <strong>📞 {t("contact.direct")}:</strong>
         </p>
         <p>+91-9179999090</p>
-        <p>📧 panditji@example.com</p>
+        <p>📧 maabaglamukhinalkehda@gmail.com</p>
       </div>
     </section>
   );
